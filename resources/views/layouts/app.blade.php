@@ -24,7 +24,7 @@
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  
+
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
   
@@ -52,8 +52,8 @@
     <div id="preloader"></div>
 
     <!-- Vendor JS Files -->
+
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -63,5 +63,6 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+  
 </body>
 </html>
