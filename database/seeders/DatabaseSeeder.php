@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             ->create();
 
         $articles = Article::factory()
-            ->count(20)
+            ->count(200)
             ->recycle($users)
             ->create();
 

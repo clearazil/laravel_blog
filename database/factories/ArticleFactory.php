@@ -21,6 +21,7 @@ class ArticleFactory extends Factory
             'user_id' => User::factory(),
             'title' => fake()->words(rand(1, 2), true),
             'content' => fake()->paragraphs(rand(1, 4), true),
+            'image' => 'https://picsum.photos/id/' . rand(1, 20) . '/1024/768',
             'is_premium' => fake()->boolean(50),
         ];
     }
