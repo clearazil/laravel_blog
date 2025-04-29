@@ -69,7 +69,7 @@
           </div>
         </div>
       </section><!-- /About Section -->
-  
+
       <!-- Blog Posts Section -->
       <section id="blog-posts" class="blog-posts section">
         <!-- Section Title -->
@@ -78,108 +78,56 @@
           <h2>Blog Posts</h2>
         </div><!-- End Section Title -->
         <div class="container">
-  
+
+
           <div class="row gy-4">
-            <div class="col-md-6 col-lg-4">
-              <div class="post-entry" data-aos="fade-up" data-aos-delay="100">
-                <a href="#" class="thumb d-block"><img src="assets/img/img_h_4.jpg" alt="Image" class="img-fluid rounded"></a>
-  
-                <div class="post-content">
-                  <div class="meta">
-                    <a href="#" class="cat">Development</a> •
-                    <span class="date">July 20, 2020</span>
-                  </div>
-                  <h3><a href="#">There live the blind texts they live</a></h3>
-                  <p>
-                    Far far away, behind the word mountains, far from the countries
-                    Vokalia and Consonantia, there live the blind texts.
-                  </p>
-  
-                  <div class="d-flex author align-items-center">
-                    <div class="pic">
-                      <img src="assets/img/team/team-3.jpg" alt="Image" class="img-fluid rounded-circle">
+            @foreach($articles as $article)
+                <div class="col-md-6 col-lg-4">
+                <div class="post-entry" data-aos="fade-up" data-aos-delay="100">
+                    <a href="#" class="thumb d-block"><img src="{{ $article->image }}" alt="Image" class="img-fluid rounded"></a>
+
+                    <div class="post-content">
+                    <div class="meta">
+                        <a href="#" class="cat">{{ $article->categories !== null ? $article->categories->first()->name : '' }}</a> •
+                        <span class="date">{{ $article->created_at->format('j M, Y') }}</span>
                     </div>
-                    <div class="author-name">
-                      <strong class="d-block">Winston Gold</strong>
-                      <span class="">Lead Product Designer</span>
+                    <h3><a href="#">{{ $article->title }}</a></h3>
+                    <p>
+                        Far far away, behind the word mountains, far from the countries
+                        Vokalia and Consonantia, there live the blind texts.
+                    </p>
+
+                    <div class="d-flex author align-items-center">
+                        <div class="pic">
+                        <img src="" class="img-fluid rounded-circle">
+                        </div>
+                        <div class="author-name">
+                        <strong class="d-block">{{ $article->user->name }}</strong>
+                        <span class="">Lead Product Designer</span>
+                        </div>
                     </div>
-                  </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-  
-            <div class="col-md-6 col-lg-4">
-              <div class="post-entry" data-aos="fade-up" data-aos-delay="200">
-                <a href="#" class="thumb d-block"><img src="assets/img/img_h_2.jpg" alt="Image" class="img-fluid rounded"></a>
-  
-                <div class="post-content">
-                  <div class="meta">
-                    <a href="#" class="cat">Development</a> •
-                    <span class="date">July 20, 2020</span>
-                  </div>
-                  <h3><a href="#">There live the blind texts they live</a></h3>
-                  <p>
-                    Far far away, behind the word mountains, far from the countries
-                    Vokalia and Consonantia, there live the blind texts.
-                  </p>
-  
-                  <div class="d-flex author align-items-center">
-                    <div class="pic">
-                      <img src="assets/img/team/team-2.jpg" alt="Image" class="img-fluid rounded-circle">
-                    </div>
-                    <div class="author-name">
-                      <strong class="d-block">Winston Gold</strong>
-                      <span class="">Lead Product Designer</span>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-  
-            <div class="col-md-6 col-lg-4">
-              <div class="post-entry" data-aos="fade-up" data-aos-delay="300">
-                <a href="#" class="thumb d-block"><img src="assets/img/img_h_3.jpg" alt="Image" class="img-fluid rounded"></a>
-  
-                <div class="post-content">
-                  <div class="meta">
-                    <a href="#" class="cat">Development</a> •
-                    <span class="date">July 20, 2020</span>
-                  </div>
-                  <h3><a href="#">There live the blind texts they live</a></h3>
-                  <p>
-                    Far far away, behind the word mountains, far from the countries
-                    Vokalia and Consonantia, there live the blind texts.
-                  </p>
-  
-                  <div class="d-flex author align-items-center">
-                    <div class="pic">
-                      <img src="assets/img/team/team-1.jpg" alt="Image" class="img-fluid rounded-circle">
-                    </div>
-                    <div class="author-name">
-                      <strong class="d-block">Winston Gold</strong>
-                      <span class="">Lead Product Designer</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            @endforeach
+
           </div>
         </div>
       </section><!-- /Blog Posts Section -->
-  
+
       <!-- Pricing Section -->
       <section id="pricing" class="pricing section light-background">
-  
+
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
           <p>Plans</p>
           <h2>Pricing Table</h2>
         </div><!-- End Section Title -->
-  
+
         <div class="container">
-  
+
           <div class="row gy-4">
-  
+
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
               <div class="pricing-item">
                 <h3>Free</h3>
@@ -196,7 +144,7 @@
                 </div>
               </div>
             </div><!-- End Pricing Item -->
-  
+
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
               <div class="pricing-item recommended">
                 <span class="recommended-badge">Recommended</span>
@@ -214,7 +162,7 @@
                 </div>
               </div>
             </div><!-- End Pricing Item -->
-  
+
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
               <div class="pricing-item">
                 <h3>Developer</h3>
@@ -231,11 +179,11 @@
                 </div>
               </div>
             </div><!-- End Pricing Item -->
-  
+
           </div>
-  
+
         </div>
-  
+
       </section><!-- /Pricing Section -->
-  
+
 @endsection
