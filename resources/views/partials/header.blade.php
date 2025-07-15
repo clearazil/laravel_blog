@@ -10,7 +10,7 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="{{ route('home') }}" class="{{ Route::current()->getName() === 'home' ? 'active' : ''}}">Home</a></li>
-          <li><a href="{{ route('articles.index') }}" class="{{ Route::current()->getName() === 'articles.index' ? 'active' : ''}}">Blog</a></li>
+          <li><a href="{{ route('articles.index') }}" class="{{ Route::current()->getName() === 'articles.index' || Route::current()->getName() === 'articles.show' ? 'active' : ''}}">Blog</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
