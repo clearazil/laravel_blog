@@ -40,7 +40,9 @@ class ArticlesController extends Controller
      */
     public function show(Article $article)
     {
-        return view('articles.show', compact('article'));
+        $recentArticles = Article::limit(5)->get();
+
+        return view('articles.show', compact('article', 'recentArticles'));
     }
 
     /**

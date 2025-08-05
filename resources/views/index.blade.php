@@ -84,14 +84,14 @@
             @foreach($articles as $article)
                 <div class="col-md-6 col-lg-4">
                 <div class="post-entry" data-aos="fade-up" data-aos-delay="100">
-                    <a href="#" class="thumb d-block"><img src="{{ $article->image }}" alt="Image" class="img-fluid rounded"></a>
+                    <a href="{{ route('articles.show', $article->id) }}" class="thumb d-block"><img src="{{ $article->image }}" alt="Image" class="img-fluid rounded"></a>
 
                     <div class="post-content">
                     <div class="meta">
                         <a href="#" class="cat">{{ $article->categories !== null ? $article->categories->first()->name : '' }}</a> •
                         <span class="date">{{ $article->created_at->format('j M, Y') }}</span>
                     </div>
-                    <h3><a href="#">{{ $article->title }}</a></h3>
+                    <h3><a href="{{ route('articles.show', $article->id) }}">{{ $article->title }}</a></h3>
                     <p>
                         Far far away, behind the word mountains, far from the countries
                         Vokalia and Consonantia, there live the blind texts.
