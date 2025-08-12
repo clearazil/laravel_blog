@@ -11,6 +11,7 @@
         <ul>
           <li><a href="{{ route('home') }}" class="{{ Route::current()->getName() === 'home' ? 'active' : ''}}">Home</a></li>
           <li><a href="{{ route('articles.index') }}" class="{{ Route::current()->getName() === 'articles.index' || Route::current()->getName() === 'articles.show' ? 'active' : ''}}">Blog</a></li>
+          <li><a href="{{ route('auth.login') }}" class="{{ Route::current()->getName() === 'auth.login' ? 'active' : ''}}">Login</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
