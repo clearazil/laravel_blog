@@ -11,3 +11,4 @@ Route::get('/blog', [ArticlesController::class, 'index'])->name('articles.index'
 Route::get('/blog/article/{article}', [ArticlesController::class, 'show'])->name('articles.show');
 Route::get('/login', [LoginController::class, 'login'])->name('auth.login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.auth');
+Route::get('/logout', [LoginController::class, 'logout'])->name('auth.logout');
