@@ -4,6 +4,7 @@ use App\Http\Controllers\ArticlesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MyArticlesController;
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
 
@@ -12,3 +13,4 @@ Route::get('/blog/article/{article}', [ArticlesController::class, 'show'])->name
 Route::get('/login', [LoginController::class, 'login'])->name('auth.login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.auth');
 Route::get('/logout', [LoginController::class, 'logout'])->name('auth.logout');
+Route::get('/my-articles', [MyArticlesController::class, 'index'])->name('my-articles.index');

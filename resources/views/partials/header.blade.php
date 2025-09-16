@@ -11,6 +11,7 @@
         <ul>
           <li><a href="{{ route('home') }}" class="{{ Route::current()->getName() === 'home' ? 'active' : ''}}">Home</a></li>
           <li><a href="{{ route('articles.index') }}" class="{{ Route::current()->getName() === 'articles.index' || Route::current()->getName() === 'articles.show' ? 'active' : ''}}">Blog</a></li>
+          <li><a href="{{ route('my-articles.index') }}" class="{{ Route::current()->getName() === 'my-articles.index'}}">My Articles</a></li>
           @if (Auth::check())
             <li><a href="{{ route('auth.logout') }}" class="{{ Route::current()->getName() === 'auth.logout' ? 'active' : ''}}">Logout</a></li>
           @else
