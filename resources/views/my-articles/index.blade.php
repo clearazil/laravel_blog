@@ -67,30 +67,40 @@
             <thead>
                 <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Title</th>
+                <th scope="col">Content</th>
+                <th scope="col">Created at</th>
+                <th scope="col">Premium</th>
+                <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
+                @foreach($articles as $article)
                 <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td scope="row">{{ $article->id }}</td>
+                <td>{{ $article->title }}</td>
+                <td>{{ Str::limit($article->content, 50) }}</td>
+                <td>{{ $article->created_at->format('d-m-Y') }}</td>
+                <td>
+                    @if($article->is_premium)
+                        <span class="badge bg-warning text-dark">Premium</span>
+                    @endif
+                </td>
+                <td class="text-nowrap">
+                    <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-sm btn-outline-secondary border-0 shadow-none">
+                        <i class="bi bi-pencil" style="color: #198754;"></i> Edit
+                    </a>
+
+                    <form action="{{ route('articles.destroy', $article->id) }}" method="POST" class="d-inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-sm btn-outline-secondary border-0 shadow-none" onclick="return confirm('Are you sure you want to delete this article?')">
+                            <i class="bi bi-trash3 text-danger"></i> Delete
+                        </button>
+                    </form>
+                </td>
                 </tr>
-                <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                </tr>
-                <tr>
-                <th scope="row">3</th>
-                <td>John</td>
-                <td>Doe</td>
-                <td>@social</td>
-                </tr>
+                @endforeach
             </tbody>
             </table>
 
