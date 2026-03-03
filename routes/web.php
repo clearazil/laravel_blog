@@ -17,3 +17,4 @@ Route::get('/my-articles', [MyArticlesController::class, 'index'])->name('my-art
 Route::get('/my-articles/create', [MyArticlesController::class, 'create'])->name('articles.create');
 Route::get('/my-articles/{$article}/edit', [MyArticlesController::class, 'edit'])->name('articles.edit');
 Route::delete('/my-articles/{$article}', [MyArticlesController::class, 'destroy'])->name('articles.destroy');
+Route::post('/my-articles/store', [MyArticlesController::class, 'store'])->name('articles.store');

@@ -14,4 +14,27 @@ class MyArticlesController extends Controller
 
         return view('my-articles.index', compact('articles'));
     }
+
+    public function create()
+    {
+        return view('my-articles.create');
+    }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'title'      => 'required|max:255',
+            'content'    => 'required',
+            'is_premium' => 'required|boolean',
+        ]);
+
+        Article::create([
+            'title'      => $validated['title'],
+            'content'    => $validated['content'],
+            'is_premium' => $validated['is_premium'],
+            'user_id'    => auth()->id()
+        ]);
+
+        return redirect()->route('my-articles.index')->with('success', 'Article successfully created!');
+    }
 }

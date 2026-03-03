@@ -2164,6 +2164,7 @@ section,
 .contact .php-email-form input[type=text],
 .contact .php-email-form input[type=email],
 .contact .php-email-form input[type=password],
+.contact .php-email-form select,
 .contact .php-email-form textarea {
   color: var(--default-color);
   background-color: var(--surface-color);
@@ -2176,6 +2177,7 @@ section,
 .contact .php-email-form input[type=text]:focus,
 .contact .php-email-form input[type=email]:focus,
 .contact .php-email-form input[type=password]:focus,
+.contact .php-email-form select:focus,
 .contact .php-email-form textarea:focus {
   border-color: var(--accent-color);
 }
@@ -2189,7 +2191,8 @@ section,
 
 .contact .php-email-form input[type=text],
 .contact .php-email-form input[type=password],
-.contact .php-email-form input[type=email] {
+.contact .php-email-form input[type=email],
+.contact .php-email-form select {
 
   height: 48px;
   padding: 10px 15px;
@@ -2198,6 +2201,16 @@ section,
 .contact .php-email-form textarea {
   padding: 10px 12px;
   height: 290px;
+}
+
+.contact .php-email-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%232d465e' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 14px;
 }
 
 .contact .php-email-form button[type=submit] {

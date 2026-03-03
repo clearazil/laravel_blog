@@ -12,7 +12,7 @@
         <h1>My Articles</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">My Articles</a></li>
+            <li><a href="{{ route('my-articles.index') }}">My Articles</a></li>
             <li class="current">Index</li>
           </ol>
         </nav>
@@ -50,7 +50,13 @@
           </div>
 
           <div class="col-lg-8">
-
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert" style="background-color: #d1e7dd; color: #0f5132; border: 1px solid #badbcc; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                    <i class="bi bi-check-circle-fill me-2"></i>
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="float: right; background: none; border: none; font-size: 20px; line-height: 1;">&times;</button>
+                </div>
+            @endif
 
             <table class="table table-striped">
             <thead>
